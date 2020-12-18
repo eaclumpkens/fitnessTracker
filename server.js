@@ -22,7 +22,7 @@ app.use(express.json());
 
 // routes
 app.use(require("./routes/api-routes"));
-// app.use(require("./routes/html-routes.js"));
+app.use(require("./routes/html-routes.js"));
 
 // server listener
 app.listen(PORT, () => {
