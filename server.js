@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8000;
 var db = require("./models");
 
 // connection
-mongoose.connect(process.env.MONDOGDB_URI || "mongodb://localhost:27017/workout", 
+mongoose.connect(process.env.MONDOGDB_URI || "mongodb://localhost/workout", 
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
