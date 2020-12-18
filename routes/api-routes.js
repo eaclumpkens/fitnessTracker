@@ -1,9 +1,9 @@
-
+var router = requrie("express").Router();
 var db = require("../models");
 
-module.exports = (app) => {
+module.exports = () => {
 
-    app.get("/api/workouts", (req, res) => {
+    router.get("/api/workouts", (req, res) => {
         db.Workout.find({})
         .then(routine => {
             res.json(routine);
@@ -14,13 +14,13 @@ module.exports = (app) => {
     
     });
     
-    app.get("/api/workouts/range", (req, res) => {
+    router.get("/api/workouts/range", (req, res) => {
         db.Workout.find({}).then((workouts) => {
           res.json(workouts);
         });
     });
     
-    app.post("/api/workouts", ({ body }, res) => {
+    router.post("/api/workouts", ({ body }, res) => {
         db.Workout.create(body)
         .then(routine => {
             res.json(routine);
@@ -30,7 +30,7 @@ module.exports = (app) => {
         });
     });
     
-    app.put("/api/workouts/:id", (req, res) => {
+    router.put("/api/workouts/:id", (req, res) => {
         const workoutID = req.params.id;
         db.Workout.findOneAndUpdate(
             { _id: workoutID },
