@@ -5,6 +5,7 @@ const logger = require("morgan");
 
 
 const PORT = process.env.PORT || 8000;
+const db = require("./models");
 
 // connection
 mongoose.connect(process.env.MONDOGDB_URI || "mongodb://localhost/workout", 
