@@ -8,14 +8,15 @@ const PORT = process.env.PORT || 8000;
 var db = require("./models");
 
 // connection
-mongoose.connect(process.env.MONDOGDB_URI || "mongodb://localhost/workout", 
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/workout',
     {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
     }
-);
+  );
 
 // middleware
 app.use(express.static("public"));
