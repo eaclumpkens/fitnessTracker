@@ -38,7 +38,6 @@ For local hosting:
 1. `git clone` this repository
 2. `npm init`
 3. `npm i`
-3. `npm i express mongoose morgan path`
 4. `node server`
 
 <a name="contribution"></a>
@@ -50,7 +49,10 @@ Single contribution project
 ### Gifs
 
 ##### App Demo
-![app-demo](./public/assets/img/app-demo.gif)
+![app-demo](./img/app-demo.gif) 
+
+##### Dashboard View
+![dash-view](./img/dash-view.gif) 
 
 ----
 
