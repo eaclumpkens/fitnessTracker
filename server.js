@@ -5,8 +5,6 @@ const logger = require("morgan");
 
 const PORT = process.env.PORT || 8000;
 
-var db = require("./models");
-
 // connection
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/workout',
@@ -16,7 +14,7 @@ mongoose.connect(
       useCreateIndex: true,
       useFindAndModify: false
     }
-  );
+);
 
 // middleware
 app.use(express.static("public"));
@@ -26,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // routes
-app.use(require("./routes/api-routes"));
+app.use(require("./routes/api-routes.js"));
 app.use(require("./routes/html-routes.js"));
 
 // server listener
